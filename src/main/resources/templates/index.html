@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container mt-4">
+<li class="nav-item">
+<a class="nav-link" href="#" th:href="@{/logout}"><span>logout  </span><span class="float-right"><i class="fas fa-sign-out-alt"></i></span></a>				   	
+</li>
+	<a th:href="@{/new}" class="btn btn- primary">Nuevo</a>
+		<table class="table">
+			<thead>
+			<tr>
+			<th>ID</th>
+			<th>NOMBRE</th>
+			<th>Email</th>
+			
+			
+			</tr>
+		
+			</thead>
+			<tbody>
+				<tr th:each="usuario:${usuarios}">
+					<td th:text="${usuario.id}"></td>
+					
+					<td th:text="${usuario.nombre}"></td>
+					<td th:text="${usuario.email}"></td>
+				<td>
+				<a th:href="@{/editar/}+${usuario.id}" class="btn btn-warning">Editar</a>
+				<a th:href="@{/eliminar/}+${usuario.id}" class="btn btn-danger">Eliminar</a>
+				</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		
+</body>
+</html>

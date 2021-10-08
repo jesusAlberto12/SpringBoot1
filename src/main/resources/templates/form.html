@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container mt-4">
+		<div class="col-sm-6">
+			<form th:action="@{/save}" th:object=${usuario} method="POST">
+				<div class="card">
+					<div class="card-header">
+					<h3>Modulo Persona</h3>
+					<div class="card-body"></div>
+					<div class="form-group"  >
+						<label>Id</label> <input th:field="*{id}" type="text"
+							class="form-control">
+
+					</div>
+					<div class="form-group">
+						<label>LOGIN</label> <input th:field="*{login}" type="text"
+							class="form-control">
+
+					</div>
+					<div class="form-group">
+						<label>NOMBRE</label> <input th:field="*{nombre}" type="text"
+							class="form-control">
+
+					</div>
+					<div class="form-group">
+						<label>APELLIDO PATERNO</label> <input th:field="*{apellidoPaterno}" type="text"
+							class="form-control">
+
+					</div>
+					<div class="form-group">
+						<label>APELLIDO MATERNO</label> <input th:field="*{apellidoMaterno}" type="text"
+							class="form-control">
+
+					</div>
+					<div class="form-group">
+						<label>Email</label> <input th:field="*{email}" type="text"
+							class="form-control">
+
+					</div>
+					<div class="form-group">
+						<label>contraseña</label> <input th:field="*{password}" type="text"
+							class="form-control">
+
+					</div>
+					<div class="form-group">
+								<select th:field="*{status}">
+    <option th:value="'A'" th:text="Activo"></option>
+    <option th:value="'B'" th:text="Baja"></option>
+</select>
+					</div>
+		
+					<div class="caed-footer">
+					<input type="submit" value="Guardar"  class="btn btn-success">
+					</div>
+				</div>
+				</div>
+
+
+
+			</form>
+
+		</div>
+
+	</div>
+</body>
+</html>
